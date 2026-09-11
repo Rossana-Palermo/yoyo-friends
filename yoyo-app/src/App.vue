@@ -1,47 +1,32 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-</script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+  <div id="app">
+    <header class="site-header">
+      <router-link to="/" class="wordmark">YoYo <span>Friends</span></router-link>
+    </header>
+    <router-view />
+  </div>
 </template>
-
-<style scoped>
-header {
-  line-height: 1.5;
+<style>
+.site-header {
+  padding: 28px 24px;
+  background-color: var(--color-bg);
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+.wordmark {
+  font-family: var(--font-heading);
+  font-weight: 300;
+  font-size: 22px;
+  text-decoration: none;
+  color: var(--color-primary-dark);
+  letter-spacing: 0.5px;
 }
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
+.wordmark span {
+  font-style: italic;
+  color: var(--color-accent);
+}
 
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
+#app {
+  min-height: 100vh;
 }
 </style>
